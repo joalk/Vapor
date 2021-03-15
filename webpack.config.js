@@ -1,8 +1,8 @@
 const path = require('path');
 
 module.exports = {
-  mode: process.env.NODE_ENV,
-  entry: './Frontend/index.js',
+  mode: 'development',
+  entry: './Frontend/App.jsx',
   output: {
     path: path.join(__dirname, './bundle'),
     filename: 'bundle.js',
