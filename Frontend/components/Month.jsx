@@ -1,0 +1,14 @@
+import React from 'react';
+import { Week } from './Week.jsx'
+
+export const Month = () => {
+    let weeks = [];
+    for (let i = 0; i < 5; i++) {
+        weeks.push(<Week />)
+    }
+    return (
+        <div>
+            {weeks}
+        </div>
+    )
+}
