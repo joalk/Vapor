@@ -7,7 +7,7 @@ export const Month = () => {
         weeks.push(<Week />)
     }
     return (
-        <div>
+        <div className="month">
             {weeks}
         </div>
     )

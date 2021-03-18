@@ -7,7 +7,7 @@ export const Week = () => {
         days.push(<Day />)
     }
     return (
-        <div>
+        <div className="week">
             {days}
         </div>
     )
