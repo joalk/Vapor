@@ -1,3 +1,15 @@
-.container {
-  color: red;
+.week {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.day {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  color: rgb(150, 52, 128);
+  border: 10px;
+  border-color: pink;
+  border-style: solid;
+  width: 70px;
 }
