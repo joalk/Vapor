@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { AverageDisplay } from './components/AverageDisplay.jsx';
 import { Container } from './components/Container.jsx'
 
 class App extends React.Component {
@@ -13,6 +14,7 @@ get name() {
         <div>
             <h1>My name is {this.name}.</h1>
             <Container />
+            <AverageDisplay />
         </div>
     )
   }
