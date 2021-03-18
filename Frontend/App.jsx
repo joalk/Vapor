@@ -5,7 +5,7 @@ import { Container } from './components/Container.jsx'
 class App extends React.Component {
 	// name property goes here:
 get name() {
-  return 'Joal'
+  return 'Joal loves Darren'
 }
 
   render() {

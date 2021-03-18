@@ -1,15 +1,16 @@
 .week {
   display: flex;
   flex-wrap: wrap;
+  flex-flow: row wrap;
 }
 
 .day {
   display: flex;
   align-content: center;
-  justify-content: space-between;
+  justify-content: center;
   color: rgb(150, 52, 128);
   border: 10px;
   border-color: pink;
   border-style: solid;
-  width: 70px;
+  flex-grow: 1;
 }
