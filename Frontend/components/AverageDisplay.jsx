@@ -4,7 +4,7 @@ export const AverageDisplay = (props) => {
 
     const total = () => {
         if (props.puffArray.length) {
-        return props.puffArray.reduce((el, acc) => {
+        return props.puffArray.reduce((acc, el) => {
             acc += Number(el['puffs'])
             return acc
         }, 0)
