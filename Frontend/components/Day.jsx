@@ -1,9 +1,10 @@
 import React from 'react';
 
-export const Day = () => {
+export const Day = (props) => {
+
     return (
         <div className="day">
-            <h1>Day</h1>
+            <h1>ID: {props.puffs}</h1>
         </div>
     )
 }

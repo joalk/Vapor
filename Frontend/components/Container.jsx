@@ -31,7 +31,7 @@ export class Container extends Component {
     render() {
     return (
         <div className="container">
-            <Month />
+            <Month puffArray={this.state.puffArray}/>
             <PuffCreator
                 puffChange={this.puffChange}
                 puffSubmit={this.puffSubmit}

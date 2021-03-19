@@ -1,14 +1,14 @@
 import React from 'react';
-import { Week } from './Week.jsx'
+import { Day } from './Day.jsx'
 
-export const Month = () => {
-    let weeks = [];
-    for (let i = 0; i < 4; i++) {
-        weeks.push(<Week />)
+export const Month = (props) => {
+    let days = [];
+    for (let i = 0; i < props.puffArray.length; i++) {
+        days.push(<Day puffs={props.puffArray[i].puffs}/>)
     }
     return (
         <div className="month">
-            {weeks}
+            {days}
         </div>
     )
 }
