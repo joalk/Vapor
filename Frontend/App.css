@@ -3,10 +3,10 @@
   flex-direction: column;
 }
 
-.week {
+.month {
   display: flex;
+  max-width: 850px;
   flex-wrap: wrap;
-  flex-flow: row wrap;
 }
 
 .day {
@@ -17,7 +17,8 @@
   border: 10px;
   border-color: pink;
   border-style: solid;
-  flex-grow: 1;
+  width: 100px;
+  height: 100px;
 }
 
 .puffcreator {
