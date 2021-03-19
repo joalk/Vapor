@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Month } from './Month.jsx'
 import { PuffCreator } from './PuffCreator.jsx';
+import { AverageDisplay } from './AverageDisplay.jsx';
 
 export class Container extends Component {
     constructor(props) {
@@ -37,6 +38,7 @@ export class Container extends Component {
                 puffSubmit={this.puffSubmit}
                 puffValue={this.state.puffValue}
             />
+            <AverageDisplay puffArray={this.state.puffArray}/>
         </div>
     )
     }
