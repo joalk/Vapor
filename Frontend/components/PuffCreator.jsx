@@ -6,7 +6,7 @@ export const PuffCreator = (props) => {
             <form onSubmit={props.puffSubmit}>
                 <label>
                     Puff Count:
-                    <input type="number" name="count" onChange={props.puffChange}/>
+                    <input type="number" name="count" onChange={props.puffChange} value={props.puffValue}/>
                 </label>
                 <input type="submit" value="Submit"/>
             </form>

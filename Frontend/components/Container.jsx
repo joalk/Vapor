@@ -6,8 +6,9 @@ export class Container extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            puffValue: 0,
+            puffValue: '',
             puffArray: [],
+            id: 1
         }
         this.puffChange = this.puffChange.bind(this);
         this.puffSubmit = this.puffSubmit.bind(this);
@@ -19,17 +20,22 @@ export class Container extends Component {
 
     puffSubmit (e) {
         e.preventDefault();
-        this.setState({ puffArray: [...this.state.puffArray, this.state.puffValue] })
+        this.setState(prevState => ({
+            puffArray: [...prevState.puffArray, { puffs: prevState.puffValue, id: prevState.id }],
+            puffValue: '',
+            id: prevState.id + 1
+        }))
+        console.log(this.state)
     }
 
     render() {
     return (
         <div className="container">
-            <h1>{this.state.puffArray}</h1>
             <Month />
-            <PuffCreator 
+            <PuffCreator
                 puffChange={this.puffChange}
                 puffSubmit={this.puffSubmit}
+                puffValue={this.state.puffValue}
             />
         </div>
     )
