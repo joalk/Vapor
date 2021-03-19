@@ -2,6 +2,8 @@ import React from 'react';
 
 export const AverageDisplay = (props) => {
 
+    const dailyAverage = [];
+
     const total = () => {
         if (props.puffArray.length) {
         return props.puffArray.reduce((acc, el) => {
@@ -15,7 +17,9 @@ export const AverageDisplay = (props) => {
 
     const average = () => {
         if (props.puffArray.length) {
-            return (total() / props.puffArray.length)
+            let day = total() / props.puffArray.length;
+            dailyAverage.push(day)
+            return day;
         } else {
             return 0;
         }
