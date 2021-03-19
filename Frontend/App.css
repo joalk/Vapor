@@ -1,3 +1,13 @@
+.app {
+  display: flex;
+  flex-direction: column;
+}
+
+.panel {
+  display: flex;
+  align-items: center;
+}
+
 .week {
   display: flex;
   flex-wrap: wrap;
@@ -13,4 +23,9 @@
   border-color: pink;
   border-style: solid;
   flex-grow: 1;
+}
+
+.puffcreator {
+  color: rgb(150, 52, 128);
+  font-size: larger;
 }
