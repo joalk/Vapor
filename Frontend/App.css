@@ -3,11 +3,6 @@
   flex-direction: column;
 }
 
-.panel {
-  display: flex;
-  align-items: center;
-}
-
 .week {
   display: flex;
   flex-wrap: wrap;
