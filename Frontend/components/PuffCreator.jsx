@@ -1,14 +1,14 @@
 import React from 'react';
 
-export const PuffCreator = () => {
+export const PuffCreator = (props) => {
     return (
         <div className="puffcreator">
-            <form>
+            <form onSubmit={props.puffSubmit}>
                 <label>
                     Puff Count:
-                    <input type="text" name="count" />
+                    <input type="number" name="count" onChange={props.puffChange}/>
                 </label>
-                <input type="submit" value="Submit" />
+                <input type="submit" value="Submit"/>
             </form>
         </div>
     )

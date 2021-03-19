@@ -7,7 +7,7 @@ export class Container extends Component {
         super(props);
         this.state = {
             puffValue: 0,
-            puffArray: []
+            puffArray: [],
         }
         this.puffChange = this.puffChange.bind(this);
         this.puffSubmit = this.puffSubmit.bind(this);
@@ -19,18 +19,18 @@ export class Container extends Component {
 
     puffSubmit (e) {
         e.preventDefault();
-        this.setState({
-            puffArray: puffArray.push(e.target.value)
-        })
+        this.setState({ puffArray: [...this.state.puffArray, this.state.puffValue] })
     }
 
     render() {
     return (
         <div className="container">
-            <h1>Hello</h1>
-            {this.state.puffArray}
+            <h1>{this.state.puffArray}</h1>
             <Month />
-            <PuffCreator />
+            <PuffCreator 
+                puffChange={this.puffChange}
+                puffSubmit={this.puffSubmit}
+            />
         </div>
     )
     }
