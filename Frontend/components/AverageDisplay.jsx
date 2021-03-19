@@ -13,10 +13,20 @@ export const AverageDisplay = (props) => {
     }
     }
 
+    const average = () => {
+        if (props.puffArray.length) {
+            return (total() / props.puffArray.length)
+        } else {
+            return 0;
+        }
+        
+    }
+
 
     return (
         <div className="display">
-            <h1>{total()}</h1>
+            <h1>Total puff count: {total()}</h1>
+            <h1>Average puff count / day: {average()}</h1>
         </div>
     )
 }
