@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Month } from './Month.jsx'
 import { PuffCreator } from './PuffCreator.jsx';
-// import { AverageDisplay } from './AverageDisplay.jsx';
+import { AverageDisplay } from './AverageDisplay.jsx';
 
 export class Container extends Component {
     constructor(props) {
@@ -50,11 +50,12 @@ export class Container extends Component {
                 puffSubmit={this.puffSubmit}
                 puffValue={this.state.puffValue}
             />
-            {/* <AverageDisplay 
+            <AverageDisplay 
                 puffArray={this.state.puffArray}
-                prevAverage={this.state.prevAverage}
+                average={this.state.average}
                 total={this.state.total}
-            /> */}
+                decrase={this.state.decrease}
+            />
         </div>
     )
     }
