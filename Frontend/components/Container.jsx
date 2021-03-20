@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Month } from './Month.jsx'
 import { PuffCreator } from './PuffCreator.jsx';
 // import { AverageDisplay } from './AverageDisplay.jsx';
-const async = require('async');
 
 export class Container extends Component {
     constructor(props) {
@@ -22,7 +21,7 @@ export class Container extends Component {
         this.setState({puffValue: e.target.value});
     }
 
-    async puffSubmit (e) {
+    puffSubmit (e) {
         e.preventDefault();
         let total = this.state.puffArray.reduce((acc, el) => {
             acc += Number(el['puffs'])
@@ -34,12 +33,12 @@ export class Container extends Component {
             puffValue: '',
             total:total,
             average: total / this.state.puffArray.length
-        }))
-        if (prevAverage > this.state.average) {
+        }).then(
+        data => {if (prevAverage > this.state.average) {
             this.setState(({ decrease: true }))
         } else {
             this.setState(({ decrease: false }))
-        }
+        }}))
         console.log(this.state)
     }
 
