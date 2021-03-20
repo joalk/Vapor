@@ -9,6 +9,7 @@ export class Container extends Component {
         this.state = {
             puffValue: '',
             puffArray: [],
+            id: 1,
             total: 0,
             average: 0,
             decrease: false
@@ -23,24 +24,22 @@ export class Container extends Component {
 
     puffSubmit (e) {
         e.preventDefault();
-        let total = this.state.puffArray.reduce((acc, el) => {
+        let newPuffArray = this.state.puffArray.concat([{puffs: this.state.puffValue, id: this.state.id + 1}])
+        let total = newPuffArray.reduce((acc, el) => {
             acc += Number(el['puffs'])
             return acc
         }, 0)
-        let prevAverage = this.state.average;
+        let average = total / newPuffArray.length
         this.setState(prevState => ({
-            puffArray: [...prevState.puffArray, { puffs: prevState.puffValue, id: prevState.id + 1 }],
+            puffArray: newPuffArray,
             puffValue: '',
             total:total,
-            average: total / this.state.puffArray.length
-        }).then(
-        data => {if (prevAverage > this.state.average) {
-            this.setState(({ decrease: true }))
-        } else {
-            this.setState(({ decrease: false }))
-        }}))
+            average: average,
+            decrease: prevState.average > average
+        }))
         console.log(this.state)
     }
+
 
     render() {
     return (
