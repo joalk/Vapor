@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Month } from './Month.jsx'
 import { PuffCreator } from './PuffCreator.jsx';
-import { AverageDisplay } from './AverageDisplay.jsx';
+// import { AverageDisplay } from './AverageDisplay.jsx';
+const async = require('async');
 
 export class Container extends Component {
     constructor(props) {
@@ -9,7 +10,9 @@ export class Container extends Component {
         this.state = {
             puffValue: '',
             puffArray: [],
-            id: 1
+            total: 0,
+            average: 0,
+            decrease: false
         }
         this.puffChange = this.puffChange.bind(this);
         this.puffSubmit = this.puffSubmit.bind(this);
@@ -19,13 +22,24 @@ export class Container extends Component {
         this.setState({puffValue: e.target.value});
     }
 
-    puffSubmit (e) {
+    async puffSubmit (e) {
         e.preventDefault();
+        let total = this.state.puffArray.reduce((acc, el) => {
+            acc += Number(el['puffs'])
+            return acc
+        }, 0)
+        let prevAverage = this.state.average;
         this.setState(prevState => ({
-            puffArray: [...prevState.puffArray, { puffs: prevState.puffValue, id: prevState.id }],
+            puffArray: [...prevState.puffArray, { puffs: prevState.puffValue, id: prevState.id + 1 }],
             puffValue: '',
-            id: prevState.id + 1
+            total:total,
+            average: total / this.state.puffArray.length
         }))
+        if (prevAverage > this.state.average) {
+            this.setState(({ decrease: true }))
+        } else {
+            this.setState(({ decrease: false }))
+        }
         console.log(this.state)
     }
 
@@ -38,7 +52,11 @@ export class Container extends Component {
                 puffSubmit={this.puffSubmit}
                 puffValue={this.state.puffValue}
             />
-            <AverageDisplay puffArray={this.state.puffArray}/>
+            {/* <AverageDisplay 
+                puffArray={this.state.puffArray}
+                prevAverage={this.state.prevAverage}
+                total={this.state.total}
+            /> */}
         </div>
     )
     }
