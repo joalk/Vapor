@@ -48,7 +48,15 @@ export class Container extends Component {
     }
 
     puffDelete (id) {
-        console.log(id)
+        let newPuffArray = this.state.puffArray
+        for (let i = 0; i < this.state.puffArray.length; i++) {
+            if (this.state.puffArray[i].id === id) {
+                newPuffArray.splice(i, 1)
+            }
+        }
+        this.setState(prevState => ({
+            puffArray: newPuffArray
+        }))
     }
 
 
