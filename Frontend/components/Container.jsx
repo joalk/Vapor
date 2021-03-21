@@ -54,7 +54,7 @@ export class Container extends Component {
                 puffArray={this.state.puffArray}
                 average={this.state.average}
                 total={this.state.total}
-                decrase={this.state.decrease}
+                decrease={this.state.decrease}
             />
         </div>
     )
