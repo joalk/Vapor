@@ -17,6 +17,7 @@ export class Container extends Component {
         this.puffChange = this.puffChange.bind(this);
         this.puffSubmit = this.puffSubmit.bind(this);
         this.puffEdit = this.puffEdit.bind(this);
+        this.puffDelete = this.puffDelete.bind(this);
     }
 
     puffChange (e) {
@@ -46,11 +47,15 @@ export class Container extends Component {
         console.log(id)
     }
 
+    puffDelete (id) {
+        console.log(id)
+    }
+
 
     render() {
     return (
         <div className="container">
-            <Month puffArray={this.state.puffArray} puffEdit={this.puffEdit}/>
+            <Month puffArray={this.state.puffArray} puffEdit={this.puffEdit} puffDelete={this.puffDelete}/>
             <PuffCreator
                 puffChange={this.puffChange}
                 puffSubmit={this.puffSubmit}

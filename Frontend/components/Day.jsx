@@ -7,7 +7,7 @@ export const Day = (props) => {
             <h1>{props.puffs}</h1>
             <div className="button">
                 <button onClick={() => props.puffEdit(props.id)}>edit</button>
-                <button>delete</button>
+                <button onClick={() => props.puffDelete(props.id)}>delete</button>
             </div>
         </div>
     )
