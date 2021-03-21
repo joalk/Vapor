@@ -9,13 +9,14 @@ export class Container extends Component {
         this.state = {
             puffValue: '',
             puffArray: [],
-            id: 1,
+            id: 0,
             total: 0,
             average: 0,
             decrease: false
         }
         this.puffChange = this.puffChange.bind(this);
         this.puffSubmit = this.puffSubmit.bind(this);
+        this.puffEdit = this.puffEdit.bind(this);
     }
 
     puffChange (e) {
@@ -35,16 +36,21 @@ export class Container extends Component {
             puffValue: '',
             total:total,
             average: average,
-            decrease: prevState.average > average
+            decrease: prevState.average > average,
+            id: prevState.id + 1
         }))
         console.log(this.state)
+    }
+
+    puffEdit (id) {
+        console.log(id)
     }
 
 
     render() {
     return (
         <div className="container">
-            <Month puffArray={this.state.puffArray}/>
+            <Month puffArray={this.state.puffArray} puffEdit={this.puffEdit}/>
             <PuffCreator
                 puffChange={this.puffChange}
                 puffSubmit={this.puffSubmit}
