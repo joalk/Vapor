@@ -12,7 +12,9 @@ export class Container extends Component {
             id: 0,
             total: 0,
             average: 0,
-            decrease: false
+            decrease: false,
+            edit: false,
+            editId: 0
         }
         this.puffChange = this.puffChange.bind(this);
         this.puffSubmit = this.puffSubmit.bind(this);
@@ -26,7 +28,15 @@ export class Container extends Component {
 
     puffSubmit (e) {
         e.preventDefault();
-        let newPuffArray = this.state.puffArray.concat([{puffs: this.state.puffValue, id: this.state.id + 1}])
+        let newPuffArray;
+        if (this.state.edit) {
+            newPuffArray = this.state.puffArray.map(item => {
+                return item.id === this.state.editId ? { ...item, puffs: this.state.puffValue } : item
+            })
+
+        } else {
+            newPuffArray = this.state.puffArray.concat([{puffs: this.state.puffValue, id: this.state.id + 1}])
+        }
         let total = newPuffArray.reduce((acc, el) => {
             acc += Number(el['puffs'])
             return acc
@@ -38,17 +48,25 @@ export class Container extends Component {
             total:total,
             average: average,
             decrease: prevState.average > average,
-            id: prevState.id + 1
+            id: prevState.id + 1,
+            edit: false
         }))
         console.log(this.state)
     }
 
     puffEdit (id) {
         console.log(id)
+        let puffEdit = this.state.puffArray.find(item => item.id === id)
+        alert('Please edit and submit')
+            this.setState(prevState => ({
+                puffValue: puffEdit.puffs,
+                edit: true,
+                editId: puffEdit.id
+            }))
     }
 
     puffDelete (id) {
-        let newPuffArray = this.state.puffArray
+        let newPuffArray = this.state.puffArray;
         for (let i = 0; i < this.state.puffArray.length; i++) {
             if (this.state.puffArray[i].id === id) {
                 newPuffArray.splice(i, 1)
