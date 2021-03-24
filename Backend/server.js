@@ -1,12 +1,12 @@
 const express = require('express');
 const dotenv = require('dotenv');
+const puffs = require('./routes/puffs')
+
 dotenv.config({ path: './Backend/config/config.env' })
 
 const app = express();
 
-app.get('/', (req, res) => {
-    res.send('Hello from express')
-})
+app.use('/api/v1/puffs', puffs);
 
 const PORT = process.env.PORT;
 
