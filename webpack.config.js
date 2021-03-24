@@ -1,8 +1,8 @@
 const path = require('path');
 
 module.exports = {
-  mode: 'development',
-  entry: './Frontend/App.jsx',
+  mode: "production",
+  entry: './Frontend/index.js',
   output: {
     path: path.join(__dirname, './bundle'),
     filename: 'bundle.js',
