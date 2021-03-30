@@ -1,5 +1,5 @@
 import React from 'react';
-import { Day } from './Day.jsx'
+import { Day } from './Day'
 
 export const Month = (props) => {
     let days = [];

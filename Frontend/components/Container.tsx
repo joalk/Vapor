@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Month } from './Month.jsx'
-import { PuffCreator } from './PuffCreator.jsx';
-import { AverageDisplay } from './AverageDisplay.jsx';
+import { Month } from './Month'
+import { PuffCreator } from './PuffCreator';
+import { AverageDisplay } from './AverageDisplay';
 
 export class Container extends Component {
     constructor(props) {

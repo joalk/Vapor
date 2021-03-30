@@ -1,7 +1,8 @@
 import React from 'react';
-import { Container } from './components/Container.jsx'
+import { MemoryRouterProps } from 'react-router';
+import { Container } from './components/Container'
 
-export class App extends React.Component {
+export class App extends React.Component<{}, {}> {
 	// name property goes here:
 get name() {
   return 'Joal'

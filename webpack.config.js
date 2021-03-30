@@ -1,10 +1,10 @@
 const path = require('path');
 
 module.exports = {
-  mode: "production",
-  entry: './Frontend/index.js',
+  mode: "development",
+  entry: './Frontend/index.ts',
   output: {
-    path: path.join(__dirname, './bundle'),
+    path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
   },
   devServer: {
@@ -15,8 +15,13 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        test: /\.jsx?/,
+      { 
+        test: /\.tsx?$/,
+        exclude: /(node_modules)/,
+        use: {
+          loader: 'ts-loader'
+        },
+        test: /\.tsx?/,
         exclude: /(node_modules)/,
         use: {
           loader: 'babel-loader',
@@ -31,4 +36,7 @@ module.exports = {
       },
     ],
   },
+  resolve: {
+    extensions: ['tsx', 'ts', '.js'],
+  }
 };
