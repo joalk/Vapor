@@ -3,8 +3,20 @@ import { Month } from './Month'
 import { PuffCreator } from './PuffCreator';
 import { AverageDisplay } from './AverageDisplay';
 
-export class Container extends Component {
-    constructor(props) {
+interface State {
+    puffValue: string;
+    puffArray: [];
+    id: number;
+    total: number;
+    average: number;
+    decrease: boolean;
+    edit: boolean;
+    editId: number;
+
+}
+
+export class Container extends Component <{}, State>{
+    constructor(props: {}) {
         super(props);
         this.state = {
             puffValue: '',
