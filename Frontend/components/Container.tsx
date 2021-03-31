@@ -5,7 +5,7 @@ import { AverageDisplay } from './AverageDisplay';
 
 interface State {
     puffValue: string;
-    puffArray: [];
+    puffArray: {}[];
     id: number;
     total: number;
     average: number;
@@ -34,13 +34,13 @@ export class Container extends Component <{}, State>{
         this.puffDelete = this.puffDelete.bind(this);
     }
 
-    puffChange (e) {
+    puffChange (e: React.ChangeEvent<HTMLInputElement>) {
         this.setState({puffValue: e.target.value});
     }
 
-    puffSubmit (e) {
+    puffSubmit (e: React.ChangeEvent<HTMLInputElement>) {
         e.preventDefault();
-        let newPuffArray;
+        let newPuffArray: {}[];
         if (this.state.edit) {
             newPuffArray = this.state.puffArray.map(item => {
                 return item.id === this.state.editId ? { ...item, puffs: this.state.puffValue } : item
