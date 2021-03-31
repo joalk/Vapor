@@ -41,7 +41,7 @@ export class Container extends Component <{}, State>{
         e.preventDefault();
         let newPuffArray: {}[];
         if (this.state.edit) {
-            newPuffArray = this.state.puffArray.map(item => {
+            newPuffArray = this.state.puffArray.map((item: any) => {
                 return item.id === this.state.editId ? { ...item, puffs: this.state.puffValue } : item
             })
 
@@ -67,7 +67,7 @@ export class Container extends Component <{}, State>{
 
     puffEdit (id:number) {
         console.log(id)
-        let puffEdit = this.state.puffArray.find(item => item.id === id)
+        let puffEdit:any = this.state.puffArray.find((item: any) => item.id === id)
         alert('Please edit and submit')
             this.setState(prevState => ({
                 puffValue: puffEdit.puffs,
@@ -77,9 +77,9 @@ export class Container extends Component <{}, State>{
     }
 
     puffDelete (id:number) {
-        let newPuffArray = this.state.puffArray;
+        let newPuffArray:any = this.state.puffArray;
         for (let i = 0; i < this.state.puffArray.length; i++) {
-            if (this.state.puffArray[i].id === id) {
+            if (newPuffArray.id === id) {
                 newPuffArray.splice(i, 1)
             }
         }
