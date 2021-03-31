@@ -1,6 +1,12 @@
 import React from 'react';
 
-export const PuffCreator = (props) => {
+interface PuffCreaterProps {
+    puffChange: () => void
+    puffSubmit: () => void
+    puffValue: string
+}
+
+export const PuffCreator = (props: PuffCreaterProps) => {
     return (
         <div className="puffcreator">
             <form onSubmit={props.puffSubmit}>
