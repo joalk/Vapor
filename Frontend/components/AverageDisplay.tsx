@@ -1,6 +1,13 @@
 import React from 'react';
 
-export const AverageDisplay = (props) => {
+interface AverageDisplayProps {
+    puffArray:{}[]
+    average: number
+    total: number
+    decrease: boolean
+}
+
+export const AverageDisplay = (props: AverageDisplayProps) => {
 
     return (
         <div className="display">
