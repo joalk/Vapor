@@ -12,7 +12,6 @@ interface State {
     decrease: boolean;
     edit: boolean;
     editId: number;
-
 }
 
 export class Container extends Component <{}, State>{
@@ -49,7 +48,7 @@ export class Container extends Component <{}, State>{
         } else {
             newPuffArray = this.state.puffArray.concat([{puffs: this.state.puffValue, id: this.state.id + 1}])
         }
-        let total = newPuffArray.reduce((acc, el) => {
+        let total = newPuffArray.reduce((acc:number, el:any) => {
             acc += Number(el['puffs'])
             return acc
         }, 0)
