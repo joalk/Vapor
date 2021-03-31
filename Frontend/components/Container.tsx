@@ -65,7 +65,7 @@ export class Container extends Component <{}, State>{
         console.log(this.state)
     }
 
-    puffEdit (id) {
+    puffEdit (id:number) {
         console.log(id)
         let puffEdit = this.state.puffArray.find(item => item.id === id)
         alert('Please edit and submit')
@@ -76,7 +76,7 @@ export class Container extends Component <{}, State>{
             }))
     }
 
-    puffDelete (id) {
+    puffDelete (id:number) {
         let newPuffArray = this.state.puffArray;
         for (let i = 0; i < this.state.puffArray.length; i++) {
             if (this.state.puffArray[i].id === id) {
