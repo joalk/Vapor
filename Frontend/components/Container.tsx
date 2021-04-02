@@ -14,7 +14,7 @@ interface State {
     editId: number;
 }
 
-export class Container extends Component <{}, State>{
+class Container extends Component <{}, State>{
     constructor(props: {}) {
         super(props);
         this.state = {
@@ -108,3 +108,5 @@ export class Container extends Component <{}, State>{
     )
     }
 }
+
+export default Container;

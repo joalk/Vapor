@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   mode: "development",
-  entry: './Frontend/index.ts',
+  entry: './Frontend/index',
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
@@ -16,12 +16,12 @@ module.exports = {
   module: {
     rules: [
       { 
-        test: /\.tsx?$/,
+        test: /\.ts(x)?$/,
         exclude: /(node_modules)/,
-        use: {
-          loader: 'ts-loader'
-        },
-        test: /\.tsx?$/,
+        loader: 'ts-loader'
+      },
+      {
+        test: /\.jsx?$/,
         exclude: /(node_modules)/,
         use: {
           loader: 'babel-loader',
@@ -37,6 +37,15 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
-  }
+    extensions: [
+      '.js',
+      '.jsx',
+      '.json',
+      '.scss',
+      '.less',
+      '.css',
+      '.tsx',
+      '.ts',
+    ],
+  },
 };

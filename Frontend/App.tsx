@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import { MemoryRouterProps } from 'react-router';
-import { Container } from './components/Container'
+import Container from './components/Container'
 
-export class App extends Component {
+export default class App extends Component {
 	// name property goes here:
 get name() {
   return 'Joal'

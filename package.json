@@ -2,7 +2,7 @@
   "name": "Vapor",
   "version": "1.0.0",
   "description": "",
-  "main": "./Backend/server.js",
+  "main": "./Frontend/App.tsx",
   "scripts": {
     "start": "webpack serve --open",
     "dev": "nodemon server",

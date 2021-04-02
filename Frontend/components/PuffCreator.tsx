@@ -6,13 +6,13 @@ interface PuffCreaterProps {
     puffValue: string,
 }
 
-export const PuffCreator = (props: PuffCreaterProps) => {
+export const PuffCreator: React.FC<PuffCreaterProps> = ({puffChange, puffSubmit, puffValue}) => {
     return (
         <div className="puffcreator">
-            <form onSubmit={()=>props.puffSubmit}>
+            <form onSubmit={()=>puffSubmit}>
                 <label>
                     Puff Count:   
-                    <input type="number" name="count" onChange={props.puffChange} value={props.puffValue}/>
+                    <input type="number" name="count" onChange={puffChange} value={puffValue}/>
                 </label>
                 <input className="btn"type="submit" value="Submit"/>
             </form>
