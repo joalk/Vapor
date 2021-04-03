@@ -33,7 +33,14 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [{ loader: 'style-loader' }, { loader: 'css-loader' }],
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+          },
+        ],
       },
       {
       enforce: "pre",
@@ -45,7 +52,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './index.html'
-    })
+    }),
   ],
   devtool: "source-map",
   resolve: {
