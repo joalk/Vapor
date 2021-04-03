@@ -2,10 +2,294 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./Frontend/components/Day.jsx":
-/*!*************************************!*\
-  !*** ./Frontend/components/Day.jsx ***!
-  \*************************************/
+/***/ "./build/App.js":
+/*!**********************!*\
+  !*** ./build/App.js ***!
+  \**********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "App": () => (/* binding */ App)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _components_Container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Container */ "./build/components/Container.js");
+var __extends = undefined && undefined.__extends || function () {
+  var _extendStatics = function extendStatics(d, b) {
+    _extendStatics = Object.setPrototypeOf || {
+      __proto__: []
+    } instanceof Array && function (d, b) {
+      d.__proto__ = b;
+    } || function (d, b) {
+      for (var p in b) {
+        if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p];
+      }
+    };
+
+    return _extendStatics(d, b);
+  };
+
+  return function (d, b) {
+    if (typeof b !== "function" && b !== null) throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+
+    _extendStatics(d, b);
+
+    function __() {
+      this.constructor = d;
+    }
+
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+  };
+}();
+
+
+
+
+var App = function (_super) {
+  __extends(App, _super);
+
+  function App() {
+    return _super !== null && _super.apply(this, arguments) || this;
+  }
+
+  Object.defineProperty(App.prototype, "name", {
+    get: function get() {
+      return 'Joal';
+    },
+    enumerable: false,
+    configurable: true
+  });
+
+  App.prototype.render = function () {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: "app"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "My name is ", this.name, "."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Container__WEBPACK_IMPORTED_MODULE_1__.default, null));
+  };
+
+  return App;
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
+
+
+
+/***/ }),
+
+/***/ "./build/components/AverageDisplay.js":
+/*!********************************************!*\
+  !*** ./build/components/AverageDisplay.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "AverageDisplay": () => (/* binding */ AverageDisplay)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var AverageDisplay = function AverageDisplay(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "display"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", null, "Total puff count: ", props.total), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", null, "Average puff count / day: ", props.average), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
+    className: "congrats"
+  }, props.decrease ? 'Congrats! Your daily puff average has decreased!' : ''));
+};
+
+/***/ }),
+
+/***/ "./build/components/Container.js":
+/*!***************************************!*\
+  !*** ./build/components/Container.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Container": () => (/* binding */ Container),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _Month__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Month */ "./build/components/Month.js");
+/* harmony import */ var _PuffCreator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./PuffCreator */ "./build/components/PuffCreator.js");
+/* harmony import */ var _AverageDisplay__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./AverageDisplay */ "./build/components/AverageDisplay.js");
+var __extends = undefined && undefined.__extends || function () {
+  var _extendStatics = function extendStatics(d, b) {
+    _extendStatics = Object.setPrototypeOf || {
+      __proto__: []
+    } instanceof Array && function (d, b) {
+      d.__proto__ = b;
+    } || function (d, b) {
+      for (var p in b) {
+        if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p];
+      }
+    };
+
+    return _extendStatics(d, b);
+  };
+
+  return function (d, b) {
+    if (typeof b !== "function" && b !== null) throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+
+    _extendStatics(d, b);
+
+    function __() {
+      this.constructor = d;
+    }
+
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+  };
+}();
+
+var __assign = undefined && undefined.__assign || function () {
+  __assign = Object.assign || function (t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+      s = arguments[i];
+
+      for (var p in s) {
+        if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+      }
+    }
+
+    return t;
+  };
+
+  return __assign.apply(this, arguments);
+};
+
+
+
+
+
+
+var Container = function (_super) {
+  __extends(Container, _super);
+
+  function Container(props) {
+    var _this = _super.call(this, props) || this;
+
+    _this.state = {
+      puffValue: '',
+      puffArray: [],
+      id: 0,
+      total: 0,
+      average: 0,
+      decrease: false,
+      edit: false,
+      editId: 0
+    };
+    _this.puffChange = _this.puffChange.bind(_this);
+    _this.puffSubmit = _this.puffSubmit.bind(_this);
+    _this.puffEdit = _this.puffEdit.bind(_this);
+    _this.puffDelete = _this.puffDelete.bind(_this);
+    return _this;
+  }
+
+  Container.prototype.puffChange = function (e) {
+    this.setState({
+      puffValue: e.target.value
+    });
+    console.log(this.state);
+  };
+
+  Container.prototype.puffSubmit = function (e) {
+    var _this = this;
+
+    e.preventDefault();
+    var newPuffArray;
+
+    if (this.state.edit) {
+      newPuffArray = this.state.puffArray.map(function (item) {
+        return item.id === _this.state.editId ? __assign(__assign({}, item), {
+          puffs: _this.state.puffValue
+        }) : item;
+      });
+    } else {
+      newPuffArray = this.state.puffArray.concat([{
+        puffs: this.state.puffValue,
+        id: this.state.id + 1
+      }]);
+    }
+
+    var total = newPuffArray.reduce(function (acc, el) {
+      acc += Number(el['puffs']);
+      return acc;
+    }, 0);
+    var average = total / newPuffArray.length;
+    this.setState(function (prevState) {
+      return {
+        puffArray: newPuffArray,
+        puffValue: '',
+        total: total,
+        average: average,
+        decrease: prevState.average > average,
+        id: prevState.id + 1,
+        edit: false
+      };
+    });
+    console.log(this.state);
+  };
+
+  Container.prototype.puffEdit = function (id) {
+    console.log(id);
+    var puffEdit = this.state.puffArray.find(function (item) {
+      return item.id === id;
+    });
+    alert('Please edit and submit');
+    this.setState(function (prevState) {
+      return {
+        puffValue: puffEdit.puffs,
+        edit: true,
+        editId: puffEdit.id
+      };
+    });
+  };
+
+  Container.prototype.puffDelete = function (id) {
+    var newPuffArray = this.state.puffArray;
+
+    for (var i = 0; i < this.state.puffArray.length; i++) {
+      if (newPuffArray.id === id) {
+        newPuffArray.splice(i, 1);
+      }
+    }
+
+    this.setState(function (prevState) {
+      return {
+        puffArray: newPuffArray
+      };
+    });
+  };
+
+  Container.prototype.render = function () {
+    console.log(this.state);
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: "container"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Month__WEBPACK_IMPORTED_MODULE_1__.Month, {
+      puffArray: this.state.puffArray,
+      puffEdit: this.puffEdit,
+      puffDelete: this.puffDelete
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_PuffCreator__WEBPACK_IMPORTED_MODULE_2__.PuffCreator, {
+      puffChange: this.puffChange,
+      puffSubmit: this.puffSubmit,
+      puffValue: this.state.puffValue
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_AverageDisplay__WEBPACK_IMPORTED_MODULE_3__.AverageDisplay, {
+      puffArray: this.state.puffArray,
+      average: this.state.average,
+      total: this.state.total,
+      decrease: this.state.decrease
+    }));
+  };
+
+  return Container;
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Container);
+
+/***/ }),
+
+/***/ "./build/components/Day.js":
+/*!*********************************!*\
+  !*** ./build/components/Day.js ***!
+  \*********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -32,10 +316,10 @@ var Day = function Day(props) {
 
 /***/ }),
 
-/***/ "./Frontend/components/Month.jsx":
-/*!***************************************!*\
-  !*** ./Frontend/components/Month.jsx ***!
-  \***************************************/
+/***/ "./build/components/Month.js":
+/*!***********************************!*\
+  !*** ./build/components/Month.js ***!
+  \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -43,7 +327,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "Month": () => (/* binding */ Month)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _Day__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Day */ "./Frontend/components/Day.jsx");
+/* harmony import */ var _Day__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Day */ "./build/components/Day.js");
 
 
 var Month = function Month(props) {
@@ -61,6 +345,42 @@ var Month = function Month(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "month"
   }, days);
+};
+
+/***/ }),
+
+/***/ "./build/components/PuffCreator.js":
+/*!*****************************************!*\
+  !*** ./build/components/PuffCreator.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "PuffCreator": () => (/* binding */ PuffCreator)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var PuffCreator = function PuffCreator(_a) {
+  var puffChange = _a.puffChange,
+      puffSubmit = _a.puffSubmit,
+      puffValue = _a.puffValue;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "puffcreator"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", {
+    onSubmit: function onSubmit(e) {
+      return puffSubmit(e);
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Puff Count:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    type: "number",
+    name: "count",
+    onChange: puffChange,
+    value: puffValue
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    className: "btn",
+    type: "submit",
+    value: "Submit"
+  })));
 };
 
 /***/ }),
@@ -29874,244 +30194,6 @@ if (false) {} else {
 }
 
 
-/***/ }),
-
-/***/ "./Frontend/App.tsx":
-/*!**************************!*\
-  !*** ./Frontend/App.tsx ***!
-  \**************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "App": () => (/* binding */ App)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _components_Container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Container */ "./Frontend/components/Container.tsx");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-
-
-var App = (function (_super) {
-    __extends(App, _super);
-    function App() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    Object.defineProperty(App.prototype, "name", {
-        get: function () {
-            return 'Joal';
-        },
-        enumerable: false,
-        configurable: true
-    });
-    App.prototype.render = function () {
-        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "app" },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null,
-                "My name is ",
-                this.name,
-                "."),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Container__WEBPACK_IMPORTED_MODULE_1__.default, null)));
-    };
-    return App;
-}(react__WEBPACK_IMPORTED_MODULE_0__.Component));
-
-
-
-/***/ }),
-
-/***/ "./Frontend/components/AverageDisplay.tsx":
-/*!************************************************!*\
-  !*** ./Frontend/components/AverageDisplay.tsx ***!
-  \************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "AverageDisplay": () => (/* binding */ AverageDisplay)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-
-var AverageDisplay = function (props) {
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "display" },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", null,
-            "Total puff count: ",
-            props.total),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", null,
-            "Average puff count / day: ",
-            props.average),
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", { className: "congrats" }, props.decrease ? 'Congrats! Your daily puff average has decreased!' : '')));
-};
-
-
-/***/ }),
-
-/***/ "./Frontend/components/Container.tsx":
-/*!*******************************************!*\
-  !*** ./Frontend/components/Container.tsx ***!
-  \*******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Container": () => (/* binding */ Container),
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _Month__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Month */ "./Frontend/components/Month.jsx");
-/* harmony import */ var _PuffCreator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./PuffCreator */ "./Frontend/components/PuffCreator.tsx");
-/* harmony import */ var _AverageDisplay__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./AverageDisplay */ "./Frontend/components/AverageDisplay.tsx");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __assign = (undefined && undefined.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-
-
-
-
-var Container = (function (_super) {
-    __extends(Container, _super);
-    function Container(props) {
-        var _this = _super.call(this, props) || this;
-        _this.state = {
-            puffValue: '',
-            puffArray: [],
-            id: 0,
-            total: 0,
-            average: 0,
-            decrease: false,
-            edit: false,
-            editId: 0
-        };
-        _this.puffChange = _this.puffChange.bind(_this);
-        _this.puffSubmit = _this.puffSubmit.bind(_this);
-        _this.puffEdit = _this.puffEdit.bind(_this);
-        _this.puffDelete = _this.puffDelete.bind(_this);
-        return _this;
-    }
-    Container.prototype.puffChange = function (e) {
-        this.setState({ puffValue: e.target.value });
-    };
-    Container.prototype.puffSubmit = function (e) {
-        var _this = this;
-        e.preventDefault();
-        var newPuffArray;
-        if (this.state.edit) {
-            newPuffArray = this.state.puffArray.map(function (item) {
-                return item.id === _this.state.editId ? __assign(__assign({}, item), { puffs: _this.state.puffValue }) : item;
-            });
-        }
-        else {
-            newPuffArray = this.state.puffArray.concat([{ puffs: this.state.puffValue, id: this.state.id + 1 }]);
-        }
-        var total = newPuffArray.reduce(function (acc, el) {
-            acc += Number(el['puffs']);
-            return acc;
-        }, 0);
-        var average = total / newPuffArray.length;
-        this.setState(function (prevState) { return ({
-            puffArray: newPuffArray,
-            puffValue: '',
-            total: total,
-            average: average,
-            decrease: prevState.average > average,
-            id: prevState.id + 1,
-            edit: false
-        }); });
-        console.log(this.state);
-    };
-    Container.prototype.puffEdit = function (id) {
-        console.log(id);
-        var puffEdit = this.state.puffArray.find(function (item) { return item.id === id; });
-        alert('Please edit and submit');
-        this.setState(function (prevState) { return ({
-            puffValue: puffEdit.puffs,
-            edit: true,
-            editId: puffEdit.id
-        }); });
-    };
-    Container.prototype.puffDelete = function (id) {
-        var newPuffArray = this.state.puffArray;
-        for (var i = 0; i < this.state.puffArray.length; i++) {
-            if (newPuffArray.id === id) {
-                newPuffArray.splice(i, 1);
-            }
-        }
-        this.setState(function (prevState) { return ({
-            puffArray: newPuffArray
-        }); });
-    };
-    Container.prototype.render = function () {
-        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "container" },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Month__WEBPACK_IMPORTED_MODULE_1__.Month, { puffArray: this.state.puffArray, puffEdit: this.puffEdit, puffDelete: this.puffDelete }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_PuffCreator__WEBPACK_IMPORTED_MODULE_2__.PuffCreator, { puffChange: this.puffChange, puffSubmit: this.puffSubmit, puffValue: this.state.puffValue }),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_AverageDisplay__WEBPACK_IMPORTED_MODULE_3__.AverageDisplay, { puffArray: this.state.puffArray, average: this.state.average, total: this.state.total, decrease: this.state.decrease })));
-    };
-    return Container;
-}(react__WEBPACK_IMPORTED_MODULE_0__.Component));
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Container);
-
-
-/***/ }),
-
-/***/ "./Frontend/components/PuffCreator.tsx":
-/*!*********************************************!*\
-  !*** ./Frontend/components/PuffCreator.tsx ***!
-  \*********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "PuffCreator": () => (/* binding */ PuffCreator)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-
-var PuffCreator = function (_a) {
-    var puffChange = _a.puffChange, puffSubmit = _a.puffSubmit, puffValue = _a.puffValue;
-    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "puffcreator" },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", { onSubmit: function () { return puffSubmit; } },
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null,
-                "Puff Count:",
-                react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", { type: "number", name: "count", onChange: puffChange, value: puffValue })),
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", { className: "btn", type: "submit", value: "Submit" }))));
-};
-
-
 /***/ })
 
 /******/ 	});
@@ -30173,18 +30255,17 @@ var PuffCreator = function (_a) {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-/*!****************************!*\
-  !*** ./Frontend/index.tsx ***!
-  \****************************/
+/*!************************!*\
+  !*** ./build/index.js ***!
+  \************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./App */ "./Frontend/App.tsx");
+/* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./App */ "./build/App.js");
 
 
 
-react_dom__WEBPACK_IMPORTED_MODULE_1__.render(react__WEBPACK_IMPORTED_MODULE_0__.createElement(_App__WEBPACK_IMPORTED_MODULE_2__.App, null), document.getElementById('app'));
-
+react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_App__WEBPACK_IMPORTED_MODULE_2__.App, null), document.getElementById('app'));
 })();
 
 /******/ })()

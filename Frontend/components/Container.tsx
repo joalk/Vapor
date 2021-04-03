@@ -33,11 +33,12 @@ export class Container extends Component <{}, State>{
         this.puffDelete = this.puffDelete.bind(this);
     }
 
-    puffChange (e: React.ChangeEvent<HTMLInputElement>) {
+    puffChange (e: any) {
         this.setState({puffValue: e.target.value});
+        console.log(this.state)
     }
 
-    puffSubmit (e: React.ChangeEvent<HTMLInputElement>) {
+    puffSubmit (e: any) {
         e.preventDefault();
         let newPuffArray: {}[];
         if (this.state.edit) {
@@ -90,6 +91,7 @@ export class Container extends Component <{}, State>{
 
 
     render() {
+        console.log(this.state)
     return (
         <div className="container">
             <Month puffArray={this.state.puffArray} puffEdit={this.puffEdit} puffDelete={this.puffDelete}/>
