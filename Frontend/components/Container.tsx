@@ -14,7 +14,7 @@ interface State {
     editId: number;
 }
 
-class Container extends Component <{}, State>{
+export class Container extends Component <{}, State>{
     constructor(props: {}) {
         super(props);
         this.state = {

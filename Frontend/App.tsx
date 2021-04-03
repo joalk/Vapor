@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
-import { MemoryRouterProps } from 'react-router';
 import Container from './components/Container'
 
-export default class App extends Component {
+interface IProps {
+  name: string;
+}
+
+export class App extends Component <any, any>{
 	// name property goes here:
 get name() {
   return 'Joal'
 }
-
   render() {
     return (
         <div className="app">
