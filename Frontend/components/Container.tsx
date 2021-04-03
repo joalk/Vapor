@@ -35,7 +35,6 @@ export class Container extends Component <{}, State>{
 
     puffChange (e: any) {
         this.setState({puffValue: e.target.value});
-        console.log(this.state)
     }
 
     puffSubmit (e: any) {
@@ -63,11 +62,9 @@ export class Container extends Component <{}, State>{
             id: prevState.id + 1,
             edit: false
         }))
-        console.log(this.state)
     }
 
     puffEdit (id:number) {
-        console.log(id)
         let puffEdit:any = this.state.puffArray.find((item: any) => item.id === id)
         alert('Please edit and submit')
             this.setState(prevState => ({
@@ -91,23 +88,22 @@ export class Container extends Component <{}, State>{
 
 
     render() {
-        console.log(this.state)
-    return (
-        <div className="container">
-            <Month puffArray={this.state.puffArray} puffEdit={this.puffEdit} puffDelete={this.puffDelete}/>
-            <PuffCreator
-                puffChange={this.puffChange}
-                puffSubmit={this.puffSubmit}
-                puffValue={this.state.puffValue}
-            />
-            <AverageDisplay 
-                puffArray={this.state.puffArray}
-                average={this.state.average}
-                total={this.state.total}
-                decrease={this.state.decrease}
-            />
-        </div>
-    )
+        return (
+            <div className="container">
+                <Month puffArray={this.state.puffArray} puffEdit={this.puffEdit} puffDelete={this.puffDelete}/>
+                <PuffCreator
+                    puffChange={this.puffChange}
+                    puffSubmit={this.puffSubmit}
+                    puffValue={this.state.puffValue}
+                />
+                <AverageDisplay 
+                    puffArray={this.state.puffArray}
+                    average={this.state.average}
+                    total={this.state.total}
+                    decrease={this.state.decrease}
+                />
+            </div>
+        )
     }
 }
 
